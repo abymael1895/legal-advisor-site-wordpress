@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Advisors</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos básicos para o site estático */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #fafcfc;
+            color: #1c1d22;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: #4c3d42;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        header p {
+            margin: 1rem 0 0 0;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        main {
+            padding: 4rem 0;
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .hero-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #4c3d42;
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #9baeb9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card h3 {
+            color: #4c3d42;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card p {
+            color: #9baeb9;
+        }
+        
+        footer {
+            background-color: #4c3d42;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #4c3d42;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 2rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #1c1d22;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Site Advisors</h1>
+            <p>Consultoria especializada em desenvolvimento web e estratégia digital</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero-section">
+                <h2>Transforme sua presença digital</h2>
+                <p>Oferecemos soluções completas para empresas que desejam se destacar no mundo digital, desde desenvolvimento de sites até estratégias de marketing digital.</p>
+                <a href="#contato" class="cta-button">Fale Conosco</a>
+            </section>
+
+            <section class="services-grid">
+                <div class="service-card">
+                    <h3>Desenvolvimento Web</h3>
+                    <p>Criamos sites modernos, responsivos e otimizados para SEO que convertem visitantes em clientes.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>E-commerce</h3>
+                    <p>Desenvolvimento de lojas virtuais completas com integração de pagamentos e gestão de estoque.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Marketing Digital</h3>
+                    <p>Estratégias personalizadas de marketing digital para aumentar sua visibilidade e vendas online.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Consultoria</h3>
+                    <p>Análise e otimização de sites existentes para melhorar performance e conversões.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Manutenção</h3>
+                    <p>Serviços de manutenção contínua para manter seu site sempre atualizado e seguro.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Suporte Técnico</h3>
+                    <p>Suporte especializado para resolver problemas e implementar melhorias em seu projeto.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Site Advisors. Todos os direitos reservados.</p>
+            <p>Entre em contato: contato@siteadvisors.com</p>
+        </div>
+    </footer>
+</body>
+</html> 
