@@ -3,173 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Advisors</title>
+    <title>Site Advisors - Consultoria Jurídica Especializada</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Estilos básicos para o site estático */
+        /* Estilos baseados no tema WordPress Assembler */
+        :root {
+            --wp--preset--color--theme-1: #fafcfc;
+            --wp--preset--color--theme-2: #dde9ea;
+            --wp--preset--color--theme-3: #9baeb9;
+            --wp--preset--color--theme-4: #4c3d42;
+            --wp--preset--color--theme-5: #1c1d22;
+            --wp--preset--spacing--20: 20px;
+            --wp--preset--spacing--30: 30px;
+            --wp--preset--spacing--40: 40px;
+            --wp--preset--spacing--50: 50px;
+            --wp--preset--spacing--60: 60px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #fafcfc;
-            color: #1c1d22;
+            color: var(--wp--preset--color--theme-5);
+            background-color: var(--wp--preset--color--theme-1);
         }
-        
-        .container {
-            max-width: 1200px;
+
+        .alignfull {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .alignwide {
+            max-width: 1440px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
-        header {
-            background-color: #4c3d42;
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            font-weight: bold;
-        }
-        
-        header p {
-            margin: 1rem 0 0 0;
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        main {
-            padding: 4rem 0;
-        }
-        
-        .hero-section {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .hero-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #4c3d42;
-        }
-        
-        .hero-section p {
-            font-size: 1.2rem;
-            color: #9baeb9;
-            max-width: 600px;
+
+        .alignwide {
+            max-width: 1440px;
             margin: 0 auto;
+            padding: 0 20px;
         }
-        
+
+        /* Header */
+        .header-container {
+            background-color: var(--wp--preset--color--theme-1);
+            padding: var(--wp--preset--spacing--20) 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background-color: rgba(250, 252, 252, 0.95);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--wp--preset--color--theme-5);
+            text-decoration: none;
+            line-height: 1.3;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .navigation a {
+            color: var(--wp--preset--color--theme-5);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .navigation a:hover {
+            color: var(--wp--preset--color--theme-3);
+        }
+
+        /* Hero Section */
+        .hero-cover {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            background-image: url('https://rennare091-tmdqv.wordpress.com/wp-content/uploads/2025/08/escritorio-de-advocacia.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(125, 124, 121, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            max-width: 600px;
+            padding: var(--wp--preset--spacing--50) 0;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 0;
+        }
+
+        .main-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: var(--wp--preset--spacing--60) 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: var(--wp--preset--spacing--40);
+            color: var(--wp--preset--color--theme-5);
+        }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: var(--wp--preset--spacing--30);
+            margin-top: var(--wp--preset--spacing--40);
         }
-        
+
         .service-card {
             background: white;
-            padding: 2rem;
+            padding: var(--wp--preset--spacing--30);
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
-        
+
         .service-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .service-card h3 {
-            color: #4c3d42;
+            color: var(--wp--preset--color--theme-5);
             margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
-        
+
         .service-card p {
-            color: #9baeb9;
+            color: var(--wp--preset--color--theme-3);
+            line-height: 1.6;
         }
-        
-        footer {
-            background-color: #4c3d42;
+
+        /* Footer */
+        .footer-container {
+            background-color: var(--wp--preset--color--theme-4);
             color: white;
+            padding: var(--wp--preset--spacing--40) 0;
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
         }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: #4c3d42;
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-info {
+            margin-bottom: var(--wp--preset--spacing--30);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: var(--wp--preset--spacing--30);
+        }
+
+        .social-links a {
             color: white;
-            padding: 1rem 2rem;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 2rem;
-            transition: background-color 0.3s ease;
+            font-size: 1.2rem;
+            transition: opacity 0.3s ease;
         }
-        
-        .cta-button:hover {
-            background-color: #1c1d22;
+
+        .social-links a:hover {
+            opacity: 0.7;
         }
+
+        .footer-credit {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .footer-credit a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .navigation {
+                gap: 1rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Spacer utility */
+        .spacer-20 { height: var(--wp--preset--spacing--20); }
+        .spacer-30 { height: var(--wp--preset--spacing--30); }
+        .spacer-40 { height: var(--wp--preset--spacing--40); }
+        .spacer-50 { height: var(--wp--preset--spacing--50); }
+        .spacer-60 { height: var(--wp--preset--spacing--60); }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Site Advisors</h1>
-            <p>Consultoria especializada em desenvolvimento web e estratégia digital</p>
+    <!-- Header -->
+    <header class="header-container alignfull">
+        <div class="header-content alignwide">
+            <div class="site-brand">
+                <a href="index.html" class="site-title">Site Advisors</a>
+            </div>
+            <nav class="navigation">
+                <a href="index.html">Início</a>
+                <a href="servicos.html">Serviços</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="contato.html">Contato</a>
+                <a href="blog.html">Blog</a>
+            </nav>
         </div>
     </header>
 
-    <main>
-        <div class="container">
-            <section class="hero-section">
-                <h2>Transforme sua presença digital</h2>
-                <p>Oferecemos soluções completas para empresas que desejam se destacar no mundo digital, desde desenvolvimento de sites até estratégias de marketing digital.</p>
-                <a href="#contato" class="cta-button">Fale Conosco</a>
-            </section>
-
-            <section class="services-grid">
-                <div class="service-card">
-                    <h3>Desenvolvimento Web</h3>
-                    <p>Criamos sites modernos, responsivos e otimizados para SEO que convertem visitantes em clientes.</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>E-commerce</h3>
-                    <p>Desenvolvimento de lojas virtuais completas com integração de pagamentos e gestão de estoque.</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Marketing Digital</h3>
-                    <p>Estratégias personalizadas de marketing digital para aumentar sua visibilidade e vendas online.</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Consultoria</h3>
-                    <p>Análise e otimização de sites existentes para melhorar performance e conversões.</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Manutenção</h3>
-                    <p>Serviços de manutenção contínua para manter seu site sempre atualizado e seguro.</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Suporte Técnico</h3>
-                    <p>Suporte especializado para resolver problemas e implementar melhorias em seu projeto.</p>
-                </div>
-            </section>
+    <!-- Hero Section -->
+    <section class="hero-cover alignfull">
+        <div class="hero-overlay"></div>
+        <div class="hero-content alignwide">
+            <h1 class="hero-title">Assessamos sua situação jurídica com atenção e dedicação</h1>
         </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Services Section -->
+        <section class="section">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Direito Civil</h3>
+                    <p>Atuamos em questões relacionadas a contratos, responsabilidade civil, direito de família e sucessões, oferecendo orientação jurídica especializada.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Direito Trabalhista</h3>
+                    <p>Defendemos seus direitos trabalhistas, desde rescisões de contrato até questões de assédio moral e acidentes de trabalho.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Direito Empresarial</h3>
+                    <p>Consultoria completa para empresas, incluindo constituição, contratos comerciais, propriedade intelectual e compliance.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Direito Previdenciário</h3>
+                    <p>Auxiliamos na obtenção de benefícios previdenciários e na defesa de seus direitos junto ao INSS.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Direito Tributário</h3>
+                    <p>Orientamos sobre questões fiscais e tributárias, ajudando a otimizar a situação fiscal de pessoas físicas e jurídicas.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Consultoria Jurídica</h3>
+                    <p>Oferecemos consultoria preventiva para evitar problemas jurídicos e orientar sobre as melhores práticas legais.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section" style="background-color: var(--wp--preset--color--theme-2);">
+            <div class="alignwide">
+                <h2 class="section-title">Por que escolher a Site Advisors?</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--wp--preset--spacing--30);">
+                    <div>
+                        <h3 style="color: var(--wp--preset--color--theme-5); margin-bottom: 1rem;">Experiência</h3>
+                        <p style="color: var(--wp--preset--color--theme-3);">Mais de 10 anos de experiência em diversas áreas do direito.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--wp--preset--color--theme-5); margin-bottom: 1rem;">Transparência</h3>
+                        <p style="color: var(--wp--preset--color--theme-3);">Comunicação clara e honesta em todos os processos.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--wp--preset--color--theme-5); margin-bottom: 1rem;">Dedicação</h3>
+                        <p style="color: var(--wp--preset--color--theme-3);">Cada caso recebe atenção personalizada e dedicação total.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--wp--preset--color--theme-5); margin-bottom: 1rem;">Resultados</h3>
+                        <p style="color: var(--wp--preset--color--theme-3);">Histórico comprovado de sucesso em casos complexos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Site Advisors. Todos os direitos reservados.</p>
-            <p>Entre em contato: contato@siteadvisors.com</p>
+    <!-- Footer -->
+    <footer class="footer-container alignfull">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>segunda-feira - sexta-feira, 7h - 16h<br>
+                Av Fab, 123, Macapá, Ap<br>
+                (123) 456-7890</p>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">📘</a>
+                <a href="#" aria-label="Instagram">📷</a>
+                <a href="#" aria-label="Twitter">🐦</a>
+            </div>
+            
+            <div class="footer-credit">
+                <p>Projetado com ❤️ por Site Advisors</p>
+            </div>
         </div>
     </footer>
 </body>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - Site Advisors</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos baseados no tema WordPress Assembler */
+        :root {
+            --wp--preset--color--theme-1: #fafcfc;
+            --wp--preset--color--theme-2: #dde9ea;
+            --wp--preset--color--theme-3: #9baeb9;
+            --wp--preset--color--theme-4: #4c3d42;
+            --wp--preset--color--theme-5: #1c1d22;
+            --wp--preset--spacing--20: 20px;
+            --wp--preset--spacing--30: 30px;
+            --wp--preset--spacing--40: 40px;
+            --wp--preset--spacing--50: 50px;
+            --wp--preset--spacing--60: 60px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--wp--preset--color--theme-5);
+            background-color: var(--wp--preset--color--theme-1);
+        }
+
+        .alignfull {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .alignwide {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header-container {
+            background-color: var(--wp--preset--color--theme-1);
+            padding: var(--wp--preset--spacing--20) 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background-color: rgba(250, 252, 252, 0.95);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--wp--preset--color--theme-5);
+            text-decoration: none;
+            line-height: 1.3;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .navigation a {
+            color: var(--wp--preset--color--theme-5);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .navigation a:hover {
+            color: var(--wp--preset--color--theme-3);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            padding: var(--wp--preset--spacing--60) 0;
+        }
+
+        .main-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: var(--wp--preset--spacing--40);
+            color: var(--wp--preset--color--theme-5);
+        }
+
+        .service-detail {
+            background: white;
+            padding: var(--wp--preset--spacing--40);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: var(--wp--preset--spacing--40);
+        }
+
+        .service-detail h3 {
+            color: var(--wp--preset--color--theme-5);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-detail p {
+            color: var(--wp--preset--color--theme-3);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .service-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .service-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--wp--preset--color--theme-2);
+            color: var(--wp--preset--color--theme-3);
+        }
+
+        .service-list li:before {
+            content: "✓";
+            color: var(--wp--preset--color--theme-4);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        .footer-container {
+            background-color: var(--wp--preset--color--theme-4);
+            color: white;
+            padding: var(--wp--preset--spacing--40) 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-info {
+            margin-bottom: var(--wp--preset--spacing--30);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: var(--wp--preset--spacing--30);
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-credit {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .footer-credit a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .navigation {
+                gap: 1rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .service-detail {
+                padding: var(--wp--preset--spacing--30);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-container alignfull">
+        <div class="header-content alignwide">
+            <div class="site-brand">
+                <a href="index.html" class="site-title">Site Advisors</a>
+            </div>
+            <nav class="navigation">
+                <a href="index.html">Início</a>
+                <a href="servicos.html">Serviços</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="contato.html">Contato</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <h1 class="page-title">Nossos Serviços Jurídicos</h1>
+        
+        <div class="service-detail">
+            <h3>Direito Civil</h3>
+            <p>Nossa equipe especializada em Direito Civil oferece assessoria completa em todas as áreas do direito privado, garantindo a proteção de seus direitos e interesses.</p>
+            <ul class="service-list">
+                <li>Contratos e negociações</li>
+                <li>Responsabilidade civil</li>
+                <li>Direito de família e sucessões</li>
+                <li>Direito do consumidor</li>
+                <li>Direito imobiliário</li>
+                <li>Direito de propriedade</li>
+            </ul>
+        </div>
+
+        <div class="service-detail">
+            <h3>Direito Trabalhista</h3>
+            <p>Defendemos seus direitos trabalhistas com dedicação e conhecimento técnico, buscando sempre a melhor solução para sua situação.</p>
+            <ul class="service-list">
+                <li>Rescisão de contrato de trabalho</li>
+                <li>Assédio moral e sexual</li>
+                <li>Acidentes de trabalho</li>
+                <li>Horas extras e adicional noturno</li>
+                <li>FGTS e verbas rescisórias</li>
+                <li>Reconhecimento de vínculo empregatício</li>
+            </ul>
+        </div>
+
+        <div class="service-detail">
+            <h3>Direito Empresarial</h3>
+            <p>Oferecemos consultoria completa para empresas de todos os portes, desde a constituição até questões complexas de compliance e gestão.</p>
+            <ul class="service-list">
+                <li>Constituição de empresas</li>
+                <li>Contratos comerciais</li>
+                <li>Propriedade intelectual</li>
+                <li>Compliance e governança</li>
+                <li>Fusões e aquisições</li>
+                <li>Recuperação judicial e extrajudicial</li>
+            </ul>
+        </div>
+
+        <div class="service-detail">
+            <h3>Direito Previdenciário</h3>
+            <p>Auxiliamos na obtenção de benefícios previdenciários e na defesa de seus direitos junto ao INSS, com expertise em casos complexos.</p>
+            <ul class="service-list">
+                <li>Aposentadoria por tempo de contribuição</li>
+                <li>Aposentadoria por invalidez</li>
+                <li>Auxílio-doença e auxílio-acidente</li>
+                <li>Pensão por morte</li>
+                <li>Revisão de benefícios</li>
+                <li>Recursos administrativos e judiciais</li>
+            </ul>
+        </div>
+
+        <div class="service-detail">
+            <h3>Direito Tributário</h3>
+            <p>Oferecemos orientação especializada em questões fiscais e tributárias, ajudando a otimizar sua situação fiscal de forma legal e segura.</p>
+            <ul class="service-list">
+                <li>Planejamento tributário</li>
+                <li>Defesas administrativas</li>
+                <li>Execuções fiscais</li>
+                <li>Compensação de créditos</li>
+                <li>Recursos contra autos de infração</li>
+                <li>Consultoria em compliance fiscal</li>
+            </ul>
+        </div>
+
+        <div class="service-detail">
+            <h3>Consultoria Jurídica Preventiva</h3>
+            <p>Oferecemos consultoria preventiva para evitar problemas jurídicos e orientar sobre as melhores práticas legais para sua empresa ou situação pessoal.</p>
+            <ul class="service-list">
+                <li>Auditoria jurídica</li>
+                <li>Revisão de contratos</li>
+                <li>Orientação sobre compliance</li>
+                <li>Assessoria em negociações</li>
+                <li>Treinamentos e palestras</li>
+                <li>Due diligence</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-container alignfull">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>segunda-feira - sexta-feira, 7h - 16h<br>
+                Av Fab, 123, Macapá, Ap<br>
+                (123) 456-7890</p>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">📘</a>
+                <a href="#" aria-label="Instagram">📷</a>
+                <a href="#" aria-label="Twitter">🐦</a>
+            </div>
+            
+            <div class="footer-credit">
+                <p>Projetado com ❤️ por Site Advisors</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
